@@ -2,7 +2,7 @@ from flask import render_template, request, Response
 from application import app
 import requests
 
-@app.route('/get/prize', methods=['GET','POST'])
+@app.route('/prize/pgen', methods=['GET','POST'])
 def prize():
 	data = request.get_json()
 	prizeVal = str
