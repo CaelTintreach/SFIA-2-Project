@@ -20,7 +20,3 @@ def prize():
 		if numberVal > 5:
 			prizeVal = "a big prize!"
 			return Response("You won" + prizeVal, mimetype='text/plain')
-	
-
-#response = jsonify(letterval:letter, numberval:number)
-		
