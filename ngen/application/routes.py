@@ -3,7 +3,9 @@ from flask import request, Response
 import random
 
 @app.route('/prize/ngen', methods = ['GET'])
-def lGen():
+def nGen():
 	number = random.randint(1,10)
+	print(number)
 	return Response(number, mimetype='text/plain')
 
+print(nGen())
