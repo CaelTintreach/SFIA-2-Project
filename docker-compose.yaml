@@ -1,0 +1,26 @@
+version: '3.7'
+services: 
+	lgen:
+		build: ./lgen
+		ports:
+			- target: 5001
+			  published: 5001
+			  protocol: tcp
+	ngen:
+		build: ./ngen
+		ports:
+			- target: 5002
+			  published: 5002
+			  protocol: tcp
+	pgen:
+		build: ./pgen
+		ports:
+			- target: 5003
+			  published: 5003
+			  protocol: tcp
+	ui:
+		build: ./ui
+		ports:
+			- target: 5000
+			  published: 5000
+			  protocol: tcp
