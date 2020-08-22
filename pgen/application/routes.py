@@ -6,17 +6,17 @@ import requests
 def prize():
 	data = request.get_json()
 	prizeVal = ""
-	if data["Letter Value"] == "A":
-		if data["Number Value"] == "A":
+	if data["Letter"] == "A":
+		if data["Number"] == "A":
 			prizeVal = "no prize!"
 			return Response(prizeVal, mimetype='text/plain')
-		if data["Number Value"]  == "B":
+		if data["Number"]  == "B":
 			prizeVal = "a small prize!"
 			return Response(prizeVal, mimetype='text/plain')
-	if data["Letter Value"] == "B":
-		if data["Number Value"]  == "A":
+	if data["Letter"] == "B":
+		if data["Number"]  == "A":
 			prizeVal = "a small prize!"
 			return Response(prizeVal, mimetype='text/plain')
-		if data["Number Value"]  == "B":
+		if data["Number"]  == "B":
 			prizeVal = "a big prize!"
 			return Response("You won" + prizeVal, mimetype='text/plain')
