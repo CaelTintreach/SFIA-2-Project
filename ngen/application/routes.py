@@ -4,4 +4,6 @@ import random
 
 @app.route('/prize/ngen', methods = ['GET'])
 def lGen():
-	return Response(random.randint(1,10), mimetype='text/plain')
+	number = random.randint(1,10)
+	return Response(number, mimetype='text/plain')
+
