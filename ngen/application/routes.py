@@ -14,4 +14,6 @@ print(nGen())
 
 @app.route('/prize/ngen', methods = ['GET'])
 def nGen():
-	return Response("B", mimetype='text/plain')
+	prizePool = ["A", "B"]
+	return Response(random.choice(prizePool), mimetype='text/plain')
+	#return Response("B", mimetype='text/plain')
