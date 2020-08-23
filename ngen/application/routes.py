@@ -14,4 +14,4 @@ print(nGen())
 
 @app.route('/prize/ngen', methods = ['GET'])
 def nGen():
-	return Response("A", mimetype='text/plain')
+	return Response("B", mimetype='text/plain')
