@@ -1,5 +1,6 @@
 from flask import render_template, jsonify
-from application import app
+from application import app, db
+from application.models import Prizes
 import requests
 import json
 
@@ -11,6 +12,7 @@ def home():
 def prize():
 	letter = requests.get('http://lgen:5001/prize/lgen')
 	number = requests.get('http://ngen:5002/prize/ngen')
-	prize = requests.post('http://pgen:5003/prize/pgen', json={'Letter':letter.text, 'Number':number.text})
-	#prize = requests.post('http://pgen:5003/prize/pgen', json={"Letter":"A", "Number":"A"})
+	prize = requests.post('http://pgen:5000/prize/pgen', json={'Letter':letter.text, 'Number':number.text})
+	db.session.add(prize.text)
+	db.session.commit
 	return render_template('prize.html', title='Prize', prize=prize.text)

@@ -16,4 +16,3 @@ print(nGen())
 def nGen():
 	prizePool = ["A", "B"]
 	return Response(random.choice(prizePool), mimetype='text/plain')
-	#return Response("B", mimetype='text/plain')

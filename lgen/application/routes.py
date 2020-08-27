@@ -6,4 +6,3 @@ import random
 def lGen():
 	prizePool = ["A", "B"]
 	return Response(random.choice(prizePool), mimetype='text/plain')
-	#return Response("B", mimetype='text/plain')
